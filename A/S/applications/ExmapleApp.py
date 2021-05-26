@@ -21,12 +21,6 @@ class mine():
     pass
 
 class MineSweeper(AbstractApp):
-    '''
-    浅绿	170	215	80
-    深绿	160	210	70
-    浅棕	230	195	160
-    深棕	215	185	155
-    '''
     LightGreen  = QColor(180, 220, 100)
     DarkGreen   = QColor(155, 205, 65)
     LightBrown  = QColor(230, 195, 160)
@@ -140,6 +134,10 @@ class MineSweeper(AbstractApp):
         pass
 
     def markMine(self, index):
+        if self.mines[index].args["color"] == MineSweeper.LightBrown or \
+            self.mines[index].args["color"] == MineSweeper.DarkBrown:
+            return
+
         self.mines[index].isMark = not self.mines[index].isMark
         if self.mines[index].isMark:    
             self.mines[index].args["color"] = QColor(255, 0, 0)
