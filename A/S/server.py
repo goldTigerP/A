@@ -39,15 +39,6 @@ def socket_service():
 def SendToClient(conn, app):
     b = True
     while True:
-        '''
-        if b:
-            _picPath = os.getcwd() + '\\dog.jpg'
-            b = False
-        else:
-            _picPath = os.getcwd() + '\\cat.jpg'
-            b = True
-        _pixmap = QPixmap(_picPath)
-        '''
         _pixmap = app.GetPixmap()
         
         if _pixmap:

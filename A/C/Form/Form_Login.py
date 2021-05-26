@@ -35,7 +35,7 @@ class LoginForm(QWidget):
 
     def OnButtonOk(self):
         tcpSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        _ipC = self.ui.lineEdit_CIP.text()        
+        _ipC = self.ui.lineEdit_CIP.text()
         _portC = int(self.ui.lineEdit_CPort.text())
 
         _ipS = self.ui.lineEdit_SIP.text()
@@ -44,7 +44,7 @@ class LoginForm(QWidget):
         _address = (_ipS, _portS)
         tcpSock.connect(_address)
 
-        if tcpSock:            
+        if tcpSock:
             self._mainWindow = TheMainWindow()
             #self._mainWindow.showFullScreen()
             self._mainWindow.show()

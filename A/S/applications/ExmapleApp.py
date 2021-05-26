@@ -4,7 +4,7 @@
 import random, os
 
 from PyQt5.QtCore import QPoint, QRect, Qt
-from PyQt5.QtGui import QColor, QPainter, QPixmap
+from PyQt5.QtGui import QColor, QPainter, QPixmap, QFont
 
 from .AbstractApp import AbstractApp
 from .DrawPixmap import drawRect
@@ -38,8 +38,8 @@ class MineSweeper(AbstractApp):
         self.totalNum = self.num_x * self.num_y
         self.mineNum = self.totalNum // 8
         self.mines = []
-        self.width = 50
-        self.height = 50
+        self.width = 100
+        self.height = 100
 
         #状态   0   正在游戏    1   胜利    -1  失败
         self.status = 0
@@ -173,6 +173,8 @@ class MineSweeper(AbstractApp):
         _pixmap = QPixmap(_w, _h)
         _painter = QPainter()
         _painter.begin(_pixmap)
+        font = QFont("宋体", self.width // 2)
+        _painter.setFont(font)
 
         if self.status == 0:
             for i in range(self.totalNum):

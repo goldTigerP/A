@@ -1,6 +1,6 @@
 
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap, QColor, QBrush
+from PyQt5.QtGui import QFont, QPixmap, QColor, QBrush
 
 def drawRect(painter, rect, args):
     '''
